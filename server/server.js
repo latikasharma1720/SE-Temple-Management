@@ -409,7 +409,7 @@ app.put("/events/:id", async (req, res) => {
   });
   res.json(event);
 });
-console.log("hello world")
+
 app.delete("/events/:id", async (req, res) => {
   await Event.findByIdAndDelete(req.params.id);
   res.status(204).send();
