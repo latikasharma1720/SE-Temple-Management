@@ -12,7 +12,8 @@ const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 const session = require("express-session");
 const multer = require("multer");
-import * as dotenv from "dotenv";
+const dotenv = require('dotenv').config();
+
 
 
 const app = express();
@@ -408,7 +409,7 @@ app.put("/events/:id", async (req, res) => {
   });
   res.json(event);
 });
-
+console.log("hello world")
 app.delete("/events/:id", async (req, res) => {
   await Event.findByIdAndDelete(req.params.id);
   res.status(204).send();
